@@ -1,0 +1,22 @@
+@page
+@model ProductModel
+<h1>Lista de Productos</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Titulo</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td><img src="@product.Image" width="75"/></td>
+                <td>@product.Title</td>
+                <td>@product.Price.ToString("C2")</td>
+            </tr>
+        }
+    </tbody>
+</table>
